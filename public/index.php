@@ -23,7 +23,11 @@ $app->get('/api/musics', function (Request $request, Response $response) {
      $db = new SQLite3('../database/musics.db');
      $result = $db->query('SELECT * FROM musics');
 
-         $html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Musics</title></head><body>';
+         $html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="/css/styles.css"><meta charset="UTF-8"><title>Musics</title></head><body>';
+
+         $html .= '<h2 class="page-title">Llistat de Músics 🎵</h2>';
+         $html .= '<section class="llistat">';
+
 
     while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         $html .= '<div class="music" style="border:1px solid #ccc; padding:10px; margin-bottom:15px;">';
@@ -36,8 +40,8 @@ $app->get('/api/musics', function (Request $request, Response $response) {
         $html .= '<p><strong>Biografia:</strong> ' . htmlspecialchars($row['mus_biografia']) . '</p>';
         $html .= '</div>';
     }
-
-    $html .= '</body></html>';
+    
+    $html .= '</section></body></html>';
 
 
  $response->getBody()->write($html);
