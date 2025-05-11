@@ -1,0 +1,91 @@
+/* Título principal */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* Grid contenedor */
+.llistat {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  margin: 0 auto 60px;
+  max-width: 1200px;
+}
+
+/* Tarjetas musicales */
+.music {
+  background: linear-gradient(135deg, #ced5f0, #1a1f3c);
+  color: #e0f7ff;
+  border: 1px solid #00f7ff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow:
+    0 0 15px rgba(0, 247, 255, 0.3),
+    0 0 30px rgba(0, 255, 255, 0.1) inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.music h3 {
+  color: #9afdfe;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #00f7ff;
+}
+
+.music h2 {
+  color: #9afdfe;
+  text-shadow: 0 0 8px #00f7ff;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+
+.music p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #cceeff;
+}
+body {
+  background-color: #0a0f1c; /* azul muy oscuro, casi negro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #00f7ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #00f7ff;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+a:hover {
+  color: #9afdfe;
+  text-shadow: 0 0 8px #00f7ff;
+}
+
+a:hover::after {
+  width: 100%;
+}
